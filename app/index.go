@@ -1,15 +1,25 @@
 package app
 
-import "fmt"
+import (
+	"fmt"
+)
 
 
-//scoped function
-func test() {
-	fmt.Print("hi im the main test still")
+type dog struct {
+	name, breed string
 }
 
-//package methods 
-func Test() {
-	test()
-	fmt.Print("hi im the BIG Test")
+func (d dog) bark() {
+	fmt.Printf("%v is barking", d.name)
+}
+
+func Bark() {
+	newDog := dog{"daisy", "german-shepard"}
+	newDog.bark()
+
+	newD := dog{"goerge", "pitbull"}
+	newD.bark()
+
+	new := dog{"marcuz", "german-shepard"}
+	new.bark()
 }
